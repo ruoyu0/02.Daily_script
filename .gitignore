@@ -1,0 +1,10 @@
+# pycharm
+.idea
+
+# python
+*.pyc
+
+# 1.0sazParser
+data
+data.zip
+*.xls
