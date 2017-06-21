@@ -64,7 +64,7 @@ class sazParser():
         tbody_res = self.soup.find(name='tbody')
         for tr_res in tbody_res.find_all(name="tr"):
             one_data = dict(zip(self.html_key_list, [td_res.text.strip() for td_res in tr_res.find_all(name="td")]))
-            if one_data.get("host", "") in HOSTS:
+            if one_data.get("host", "") in HOST_LIST:
                 req_file_path = os.path.join(saz_dir_name, tr_res.find(name='a', text="C").attrs["href"]).replace('\\', '/')
                 res_file_path = os.path.join(saz_dir_name, tr_res.find(name='a', text="S").attrs["href"]).replace('\\', '/')
                 one_data["req_data"] = file_parser(req_file_path, mark=0)

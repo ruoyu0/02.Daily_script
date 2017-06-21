@@ -3,7 +3,7 @@
 import os
 import time
 
-HOSTS = ["172.16.221.100", "172.16.221.101", "172.16.221.102", "172.16.221.103"]
+HOST_LIST = ["172.16.221.100", "172.16.221.101", "172.16.221.102", "172.16.221.103"]
 saz_dir_name = "data"
 zip_file_name = "data.zip"
 url_record_name = "parserd_url.txt"

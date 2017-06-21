@@ -5,6 +5,6 @@
 *.pyc
 
 # 1.0sazParser
-data
+01.sazParser/data/*
 data.zip
 *.xls
