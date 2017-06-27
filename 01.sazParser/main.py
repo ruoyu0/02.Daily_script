@@ -76,7 +76,7 @@ class sazParser():
             for key, value in data.iteritems():
                 if key not in filter_list:
                     table.write(id_list[0], 0, key)
-                    table.write(id_list[0], 1, value)
+                    table.write(id_list[0], 1, value[:32760])
                     id_list[0] += 1
             id_list[0] += 1
 
@@ -90,14 +90,14 @@ class sazParser():
                     table.write(id_list[0], 0, new_head)
                     table.write(id_list[0], 2, str(type(value)).split("'")[1].replace("unicode", "str").replace("NoneType", ""))
                     table.write(id_list[0], 3, key2info.get(key.replace("-", "_"), ""))
-                    table.write(id_list[0], 5, value if isinstance(value, (str, unicode)) else json.dumps(value))
+                    table.write(id_list[0], 5, value[:32760] if isinstance(value, (str, unicode)) else json.dumps(value)[:32760])
                     id_list[0] += 1
                     if isinstance(value, (dict, list)):
                         data_parser(table, id_list, new_head, value)
 
         def parameter_data_write(table, id_list, data):
             table.write(id_list[0], 0, "DATA:")
-            table.write(id_list[0], 1, json.dumps(data))
+            table.write(id_list[0], 1, json.dumps(data)[:32760])
             id_list[0] += 1
             id_record = id_list[0]
             data_parser(table, id_list, "", data)
