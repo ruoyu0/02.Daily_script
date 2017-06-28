@@ -4,7 +4,12 @@
 # python
 *.pyc
 
-# 1.0sazParser
+# 0.1.sazParser
 01.sazParser/data/*
 data.zip
 *.xls
+
+# 02.falcon_test
+*.jpg
+*.jpeg
+*.json
